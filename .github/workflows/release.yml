@@ -9,8 +9,8 @@ on:
 
 jobs:
 
-
   create_release:
+    name: Create release
     runs-on: ubuntu-latest
     permissions: write-all
     outputs:
@@ -26,7 +26,6 @@ jobs:
         release_name: Release ${{ github.ref }}
         draft: false
         prerelease: false
-
 
   build-ubuntu:
     needs: create_release
@@ -51,7 +50,6 @@ jobs:
           asset_path: ./helloworld-0.0.${{ github.run_number }}-Linux.deb
           asset_name: helloworld-0.0.${{ github.run_number }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
-
 
   build-macos:
     needs: create_release
