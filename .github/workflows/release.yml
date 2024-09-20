@@ -6,6 +6,7 @@ on:
       - master
       - feature/github_actions
 
+
 jobs:
 
 
@@ -15,7 +16,7 @@ jobs:
     outputs:
       upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
-      -name: Create release
+      - name: Create release
       id: create_release
       uses: actions/create-release@v1
       env:
